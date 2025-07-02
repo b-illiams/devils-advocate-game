@@ -60,6 +60,30 @@ function watchLobby(lobbyCode) {
   });
 }
 
+document.getElementById("join-lobby-btn").addEventListener("click", () => {
+  const name = document.getElementById("player-name-input").value.trim();
+  const codeInput = document.getElementById("lobby-code-input").value.trim();
+  const status = document.getElementById("lobby-status");
+
+  if (!name) {
+    status.textContent = "Name is required.";
+    return;
+  }
+
+  let lobbyCode;
+  if (codeInput) {
+    joinLobby(codeInput, name);
+    lobbyCode = codeInput;
+    status.textContent = `Joined lobby ${lobbyCode}. Waiting for others...`;
+  } else {
+    lobbyCode = createLobby(name);
+    status.textContent = `Created lobby ${lobbyCode}. Share this code to invite players.`;
+  }
+
+  watchLobby(lobbyCode); // starts real-time sync
+});
+
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
