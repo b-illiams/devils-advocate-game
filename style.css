@@ -1,54 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Devil's Advocate Game</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
+#lobby-section {
+  margin-bottom: 2em;
+  padding: 1em;
+  background: #f4f4f4;
+  border-radius: 8px;
+}
 
-    <header>
-      <h1>🧠 Devil's Advocate</h1>
-      <p class="subtitle">Persuade, deceive, and debate your way to victory.</p>
-    </header>
-
-    <section id="statement-section">
-      <h2>🗣️ Current Statement:</h2>
-      <p id="statement">Click “Start Round” to reveal a statement.</p>
-      <button id="new-statement-btn">Start Round</button>
-    </section>
-
-    <section id="player-area">
-      <h2>👥 Players</h2>
-      <div id="player-list">
-        <!-- Dynamic player cards will appear here -->
-      </div>
-    </section>
-
-    <section id="voting-section">
-      <h2>🎯 Vote for Devil's Advocate</h2>
-      <div id="vote-options">
-        <!-- Buttons to vote on players -->
-      </div>
-      <button id="submit-vote-btn">Submit Vote</button>
-    </section>
-
-    <section id="scoreboard">
-      <h2>📊 Scoreboard</h2>
-      <table>
-        <thead>
-          <tr><th>Player</th><th>Role</th><th>Score</th></tr>
-        </thead>
-        <tbody id="score-list">
-          <!-- Dynamic score table -->
-        </tbody>
-      </table>
-    </section>
-
-  </div>
-
-  <script src="game.js"></script>
-</body>
-</html>
+#lobby-section input {
+  margin: 0.5em;
+  padding: 0.5em;
+}
